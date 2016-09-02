@@ -5,6 +5,17 @@
 
 <hr/>
 
+<h2>Comments</h2>
+
+<% @article.comments.each do |comment| %>
+    <p>
+        <i><%= comment.author %> wrote: </i><br/>
+           <%= comment.body %>
+    </p>
+<% end %>
+
+<h3>Add comment</h3>
+
 <p>
     <%= form_for([@article, @article.comments.build]) do |f| %>
         <p>
